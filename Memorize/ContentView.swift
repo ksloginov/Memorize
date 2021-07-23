@@ -14,9 +14,10 @@ struct ContentView: View {
     var body: some View {
         
         VStack {
-            LazyVGrid(columns: [GridItem(.flexible() /* Default! */), GridItem(.fixed(200)), GridItem()]) {
+            LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
                 ForEach(emojies[0..<emojiCount], id: \.self) { emoji in
                     CardView(content: emoji)
+                        .aspectRatio(2/3, contentMode: .fit)
                 }
             }
             .foregroundColor(.red)
