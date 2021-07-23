@@ -14,7 +14,7 @@ struct ContentView: View {
             CardView()
             CardView()
             CardView()
-            CardView() 
+            CardView()
         }
         .foregroundColor(.red)
         .padding()
@@ -26,7 +26,8 @@ struct CardView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .stroke(lineWidth: 3.0)
-            Text("Hello, Kristiania 2021/2022!")
+            Text("🤷‍♂️")
+                .font(.largeTitle)
         }
     }
 }
