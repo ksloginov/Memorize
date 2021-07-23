@@ -32,7 +32,9 @@ struct ContentView: View {
     
     var remove: some View {
         Button(action: {
-            emojiCount -= 1
+            if emojiCount > 1 {
+                emojiCount -= 1
+            }
         }, label: {
             Image(systemName: "minus.circle")
         })
@@ -40,7 +42,9 @@ struct ContentView: View {
     
     var add: some View {
         Button(action: {
-            emojiCount += 1
+            if emojiCount < emojies.count {
+                emojiCount += 1
+            }
         }, label: {
             Image(systemName: "plus.circle")
         })
