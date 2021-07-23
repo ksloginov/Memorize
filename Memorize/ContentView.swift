@@ -27,7 +27,7 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
-            let shape = RoundedRectangle(cornerRadius: 20)
+            let shape = Circle()
             if isFaceUp {
                 shape
                     .fill()
