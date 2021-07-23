@@ -19,30 +19,31 @@ struct ContentView: View {
                     CardView(content: emoji)
                 }
             }
-            
             HStack {
-                Button(action: {
-                    emojiCount -= 1
-                }, label: {
-                    VStack {
-                        Text("Remove")
-                        Text("Card")
-                    }
-                })
+                remove
                 Spacer()
-                Button(action: {
-                    emojiCount += 1
-                }, label: {
-                    VStack {
-                        Text("Add")
-                        Text("Card")
-                    }
-                })
+                add
             }
             .padding()
         }
         .foregroundColor(.red)
         .padding()
+    }
+    
+    var remove: some View {
+        Button(action: {
+            emojiCount -= 1
+        }, label: {
+            Image(systemName: "minus.circle")
+        })
+    }
+    
+    var add: some View {
+        Button(action: {
+            emojiCount += 1
+        }, label: {
+            Image(systemName: "plus.circle")
+        })
     }
 }
 
