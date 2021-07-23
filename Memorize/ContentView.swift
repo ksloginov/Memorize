@@ -11,34 +11,25 @@ struct ContentView: View {
     var body: some View {
         
         HStack {
-            ZStack {
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(lineWidth: 3.0)
-                Text("Hello, Kristiania 2021/2022!")
-            }
-            ZStack {
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(lineWidth: 3.0)
-                Text("Hello, Kristiania 2021/2022!")
-            }
-            ZStack {
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(lineWidth: 3.0)
-                Text("Hello, Kristiania 2021/2022!")
-            }
-            ZStack {
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(lineWidth: 3.0)
-                Text("Hello, Kristiania 2021/2022!")
-            }
+            CardView()
+            CardView()
+            CardView()
+            CardView() 
         }
         .foregroundColor(.red)
         .padding()
     }
 }
 
-
-
+struct CardView: View {
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(lineWidth: 3.0)
+            Text("Hello, Kristiania 2021/2022!")
+        }
+    }
+}
 
 
 
