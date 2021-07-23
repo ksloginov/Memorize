@@ -27,7 +27,7 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
-            let shape = Circle()
+            let shape = RoundedRectangle(cornerRadius: 20)
             if isFaceUp {
                 shape
                     .fill()
@@ -40,6 +40,9 @@ struct CardView: View {
                 shape
                     .fill()
             }
+        }
+        .onTapGesture {
+            isFaceUp = !isFaceUp
         }
     }
 }
