@@ -10,7 +10,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-        return RoundedRectangle(cornerRadius: 20).fill().padding(.horizontal)
+        return RoundedRectangle(cornerRadius: 20)
+            .stroke(lineWidth: 3.0)
+            .padding(.horizontal)
+            .foregroundColor(.red)
         //return Text("Hello, Kristiania 2021/2022!").padding()
     }
 }
