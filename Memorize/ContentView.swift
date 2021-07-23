@@ -9,10 +9,32 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, Kristiania 2021/2022!")
-            .padding()
+        
+        return RoundedRectangle(cornerRadius: 20).fill().padding(.horizontal)
+        //return Text("Hello, Kristiania 2021/2022!").padding()
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
