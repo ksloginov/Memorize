@@ -11,10 +11,10 @@ struct ContentView: View {
     var body: some View {
         
         HStack {
-            CardView()
-            CardView()
-            CardView()
-            CardView()
+            CardView(content: "❤️")
+            CardView(content: "👨🏻‍🍳")
+            CardView(content: "💩")
+            CardView(content: "😡")
         }
         .foregroundColor(.red)
         .padding()
@@ -22,7 +22,7 @@ struct ContentView: View {
 }
 
 struct CardView: View {
-    
+    var content: String
     @State var isFaceUp: Bool = true
     
     var body: some View {
@@ -34,7 +34,7 @@ struct CardView: View {
                     .foregroundColor(.white)
                 shape
                     .stroke(lineWidth: 3.0)
-                Text("🤷‍♂️")
+                Text(content)
                     .font(.largeTitle)
             } else {
                 shape
