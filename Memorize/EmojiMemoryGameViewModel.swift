@@ -21,9 +21,5 @@ class EmojiMemoryGameViewModel {
         }
     }
     
-    private var model: MemoryGameModel<String> = createMemoryGame()
-    
-    var cards: Array<MemoryGameModel<String>.Card> {
-        return model.cards
-    }
+    private (set) var model: MemoryGameModel<String> = createMemoryGame()
 }
