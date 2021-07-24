@@ -14,20 +14,20 @@ struct MemoryGameModel<CardContent> {
         
     }
     
-    init(numberOfPairsOfCards: Int) {
+    init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent) {
         cards = Array<Card>()
         // add numberOfPairsOfCards x 2 cards to cards array
         
         for pairIndex in 0..<numberOfPairsOfCards {
-            var content: CardContent = ...
-            cards.append(Card(isFaceUp: false, isMatched: false, content: <#T##CardContent#>))
-            cards.append(Card(isFaceUp: false, isMatched: false, content: <#T##CardContent#>))
+            let content: CardContent = createCardContent(pairIndex)
+            cards.append(Card(content: content))
+            cards.append(Card(content: content))
         }
     }
     
     struct Card {
-        var isFaceUp: Bool
-        var isMatched: Bool
+        var isFaceUp: Bool = false
+        var isMatched: Bool = false
         var content: CardContent
     }
 }
