@@ -14,26 +14,14 @@ struct CardView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                let shape = RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius)
-                if card.isFaceUp {
-                    shape
-                        .fill()
-                        .foregroundColor(.white)
-                    shape
-                        .stroke(lineWidth: DrawingConstants.lineWidth)
-                    Text(card.content)
-                        .font(Font.system(size: min(geometry.size.width, geometry.size.height) * DrawingConstants.fontScale))
-                } else {
-                    shape
-                        .fill()
-                }
+                Text(card.content)
+                    .font(Font.system(size: min(geometry.size.width, geometry.size.height) * DrawingConstants.fontScale))
             }
+            .modifier(Cardify(isFaceUp: card.isFaceUp))
         }
     }
     
     private struct DrawingConstants {
-        static let cornerRadius: CGFloat = 10.0
-        static let lineWidth: CGFloat = 3.0
         static let fontScale: CGFloat = 0.7
     }
 }

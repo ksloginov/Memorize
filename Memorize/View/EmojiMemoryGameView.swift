@@ -27,6 +27,7 @@ struct EmojiMemoryGameView: View {
             Rectangle().opacity(0.0)
         } else {
             CardView(card: card)
+                .modifier(Cardify(isFaceUp: card.isFaceUp))
                 .padding(4.0)
                 .aspectRatio(2/3, contentMode: .fit)
                 .onTapGesture {

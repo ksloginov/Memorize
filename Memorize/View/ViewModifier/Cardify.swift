@@ -12,15 +12,19 @@ struct Cardify: ViewModifier {
     var isFaceUp: Bool
     func body(content: Content) -> some View {
         ZStack {
+            let shape = RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius)
             if isFaceUp {
-                RoundedRectangle(cornerRadius: 10.0).fill(Color.white)
-                RoundedRectangle(cornerRadius: 10.0).stroke()
+                shape.fill(Color.white)
+                shape.stroke(lineWidth: DrawingConstants.lineWidth)
                 content
             } else {
-                RoundedRectangle(cornerRadius: 10.0)
+                shape.fill()
             }
         }
     }
     
+    private struct DrawingConstants {
+        static let cornerRadius: CGFloat = 10.0
+        static let lineWidth: CGFloat = 3.0
+    }
 }
-
