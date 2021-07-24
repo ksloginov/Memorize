@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    var viewModel: EmojiMemoryGameViewModel
+    
     @State var emojiCount = 15
     
     var body: some View {
@@ -101,9 +103,10 @@ struct CardView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let viewModel = EmojiMemoryGameViewModel()
+        ContentView(viewModel: viewModel)
             .preferredColorScheme(.dark)
-        ContentView()
+        ContentView(viewModel: viewModel)
             .preferredColorScheme(.light)
     }
 }
