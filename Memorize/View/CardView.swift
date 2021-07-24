@@ -15,8 +15,6 @@ struct CardView: View {
         GeometryReader { geometry in
             ZStack {
                 Text(card.content)
-                    .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
-                    .animation(Animation.easeOut(duration: 2).repeatForever())
                     .font(Font.system(size: min(geometry.size.width, geometry.size.height) * DrawingConstants.fontScale))
             }
             .cardify(isFaceUp: card.isFaceUp)
