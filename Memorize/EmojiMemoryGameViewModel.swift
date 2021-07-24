@@ -30,6 +30,6 @@ class EmojiMemoryGameViewModel: ObservableObject {
     }
     
     func restart() {
-        model = EmojiMemoryGameViewModel.createMemoryGame()
+        model.restart()
     }
 }

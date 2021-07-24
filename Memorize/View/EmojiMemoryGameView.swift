@@ -21,7 +21,9 @@ struct EmojiMemoryGameView: View {
         }
         .padding(.horizontal)
         .navigationBarItems(trailing: Button(action: {
-            viewModel.restart()
+            withAnimation {
+                viewModel.restart()
+            }
         }) {
             Text("Restart")
                 .foregroundColor(.red)
