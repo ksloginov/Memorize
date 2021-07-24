@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MemoryGameModel<CardContent> { 
+struct MemoryGameModel<CardContent> where CardContent: Equatable {
     private (set) var cards: Array<Card>
     
     private var indexOfTheOneAndOnlyFaceUpCard: Int?
@@ -47,7 +47,7 @@ struct MemoryGameModel<CardContent> {
     }
     
     struct Card: Identifiable {
-        var isFaceUp: Bool = true
+        var isFaceUp: Bool = false
         var isMatched: Bool = false
         var content: CardContent
         var id: Int
