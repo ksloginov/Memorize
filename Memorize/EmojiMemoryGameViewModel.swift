@@ -15,9 +15,13 @@ class EmojiMemoryGameViewModel {
     
     static let emojies = ["❤️", "👨🏻‍🍳", "💩", "😡", "😧", "🤖", "🎩", "🐯", "🦺", "💍", "🎒", "🐎", "🐩", "🦧", "🐳", "🐕", "🦄", "🦀", "🐿", "🦔", "🦦", "🦢", "🦜"]
     
-    private var model: MemoryGameModel<String> = MemoryGameModel<String>(numberOfPairsOfCards: 4) { pairIndex in
-        return EmojiMemoryGameViewModel.emojies[pairIndex]
+    static func createMemoryGame() -> MemoryGameModel<String> {
+        return MemoryGameModel<String>(numberOfPairsOfCards: 4) { pairIndex in
+            return emojies[pairIndex]
+        }
     }
+    
+    private var model: MemoryGameModel<String> = createMemoryGame()
     
     var cards: Array<MemoryGameModel<String>.Card> {
         return model.cards
