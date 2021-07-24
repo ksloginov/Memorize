@@ -11,7 +11,7 @@ struct MemoryGameModel<CardContent> {
     private (set) var cards: Array<Card>
     
     func choose(card: Card) {
-        
+        print("Hello!")
     }
     
     init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent) {
