@@ -13,20 +13,18 @@ struct EmojiMemoryGameView: View {
     
     var body: some View {
         VStack {
-//            ScrollView {
-//                LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
-//                    ForEach(viewModel.cards) { emoji in
             AspectVGrid(items: viewModel.cards, aspectRatio: 2/3, content: { card in
-                        CardView(card: card)
-                            .padding(4.0)
-                            .aspectRatio(2/3, contentMode: .fit)
-                            .onTapGesture {
-                                viewModel.choose(card)
-                            }
+                if card.isMatched && !card.isFaceUp {
+                    Rectangle().opacity(0.0)
+                } else {
+                    CardView(card: card)
+                        .padding(4.0)
+                        .aspectRatio(2/3, contentMode: .fit)
+                        .onTapGesture {
+                            viewModel.choose(card)
+                        }
+                }
             })
-//                    }
-//                }
-//            }
             .foregroundColor(.red)
         }
         .padding(.horizontal)
