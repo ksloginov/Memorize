@@ -19,7 +19,7 @@ struct ContentView: View {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 75))]) {
                     ForEach(viewModel.model.cards, id: \.self) { emoji in
-                        CardView(content: emoji)
+                        CardView(card: emoji)
                             .aspectRatio(2/3, contentMode: .fit)
                     }
                 }
@@ -58,28 +58,28 @@ struct ContentView: View {
 }
 
 struct CardView: View {
-    var content: String
-    @State var isFaceUp: Bool = true
+    
+    var card: MemoryGameModel<String>.Card
     
     var body: some View {
         ZStack {
             let shape = RoundedRectangle(cornerRadius: 20)
-            if isFaceUp {
+            if card.isFaceUp {
                 shape
                     .fill()
                     .foregroundColor(.white)
                 shape
                     .stroke(lineWidth: 3.0)
-                Text(content)
+                Text(card.content)
                     .font(.largeTitle)
             } else {
                 shape
                     .fill()
             }
         }
-        .onTapGesture {
-            isFaceUp = !isFaceUp
-        }
+//        .onTapGesture {
+//            card.isFaceUp = !card.isFaceUp
+//        }
     }
 }
 
