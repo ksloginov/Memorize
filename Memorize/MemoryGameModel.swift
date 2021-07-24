@@ -13,7 +13,9 @@ struct MemoryGameModel<CardContent> {
     private var indexOfTheOneAndOnlyFaceUpCard: Int?
     
     mutating func choose(card: Card) {
-        if let chosenIndex = cards.firstIndex(where: {$0.id == card.id}) {
+        if let chosenIndex = cards.firstIndex(where: {$0.id == card.id}),
+           !cards[chosenIndex].isFaceUp,
+           !cards[chosenIndex].isMatched {
             if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard {
                 if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                     cards[chosenIndex].isMatched = true
