@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct EmojiMemoryGameView: View {
     
     @ObservedObject var viewModel: EmojiMemoryGameViewModel
     
@@ -30,30 +30,6 @@ struct ContentView: View {
     }
 }
 
-struct CardView: View {
-    
-    var card: MemoryGameModel<String>.Card
-    
-    var body: some View {
-        ZStack {
-            let shape = RoundedRectangle(cornerRadius: 20)
-            if card.isFaceUp {
-                shape
-                    .fill()
-                    .foregroundColor(.white)
-                shape
-                    .stroke(lineWidth: 3.0)
-                Text(card.content)
-                    .font(.largeTitle)
-            } else if card.isMatched {
-                shape.opacity(0)
-            } else {
-                shape
-                    .fill()
-            }
-        }
-    }
-}
 
 
 
@@ -68,17 +44,12 @@ struct CardView: View {
 
 
 
-
-
-
-
-
-struct ContentView_Previews: PreviewProvider {
+struct EmojiMemoryGameView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = EmojiMemoryGameViewModel()
-        ContentView(viewModel: viewModel)
+        EmojiMemoryGameView(viewModel: viewModel)
             .preferredColorScheme(.dark)
-        ContentView(viewModel: viewModel)
+        EmojiMemoryGameView(viewModel: viewModel)
             .preferredColorScheme(.light)
     }
 }
