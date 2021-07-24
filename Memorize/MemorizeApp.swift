@@ -18,6 +18,7 @@ struct MemorizeApp: App {
                 EmojiMemoryGameView(viewModel: emojiGameViewModel)
                     .navigationTitle(Text(Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? ""))
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }
