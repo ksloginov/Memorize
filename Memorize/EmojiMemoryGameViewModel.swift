@@ -13,10 +13,10 @@ func makeCardContent(index: Int) -> String {
 
 class EmojiMemoryGameViewModel {
     
-    var emojies = ["❤️", "👨🏻‍🍳", "💩", "😡", "😧", "🤖", "🎩", "🐯", "🦺", "💍", "🎒", "🐎", "🐩", "🦧", "🐳", "🐕", "🦄", "🦀", "🐿", "🦔", "🦦", "🦢", "🦜"]
+    static let emojies = ["❤️", "👨🏻‍🍳", "💩", "😡", "😧", "🤖", "🎩", "🐯", "🦺", "💍", "🎒", "🐎", "🐩", "🦧", "🐳", "🐕", "🦄", "🦀", "🐿", "🦔", "🦦", "🦢", "🦜"]
     
     private var model: MemoryGameModel<String> = MemoryGameModel<String>(numberOfPairsOfCards: 4) { pairIndex in
-        return emojies[pairIndex]
+        return EmojiMemoryGameViewModel.emojies[pairIndex]
     }
     
     var cards: Array<MemoryGameModel<String>.Card> {
