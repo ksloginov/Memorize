@@ -33,7 +33,7 @@ struct EmojiMemoryGameView: View {
     @ViewBuilder // <-- pay attention to this declaration. It explains to compile that this function is also a ViewBuilder
     private func cardView(for card: MemoryGameModel<String>.Card) -> some View {
         if card.isMatched && !card.isFaceUp {
-            Rectangle().opacity(0.0)
+            Color.clear
         } else {
             CardView(card: card)
                 .modifier(Cardify(isFaceUp: card.isFaceUp))
