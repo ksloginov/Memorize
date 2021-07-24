@@ -16,7 +16,7 @@ class EmojiMemoryGameViewModel {
     var emojies = ["❤️", "👨🏻‍🍳", "💩", "😡", "😧", "🤖", "🎩", "🐯", "🦺", "💍", "🎒", "🐎", "🐩", "🦧", "🐳", "🐕", "🦄", "🦀", "🐿", "🦔", "🦦", "🦢", "🦜"]
     
     private var model: MemoryGameModel<String> = MemoryGameModel<String>(numberOfPairsOfCards: 4) { pairIndex in
-        return "🦄"
+        return emojies[pairIndex]
     }
     
     var cards: Array<MemoryGameModel<String>.Card> {
