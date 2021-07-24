@@ -14,20 +14,25 @@ struct EmojiMemoryGameView: View {
     var body: some View {
         VStack {
             AspectVGrid(items: viewModel.cards, aspectRatio: 2/3, content: { card in
-                if card.isMatched && !card.isFaceUp {
-                    Rectangle().opacity(0.0)
-                } else {
-                    CardView(card: card)
-                        .padding(4.0)
-                        .aspectRatio(2/3, contentMode: .fit)
-                        .onTapGesture {
-                            viewModel.choose(card)
-                        }
-                }
+                cardView(for: card)
             })
             .foregroundColor(.red)
         }
         .padding(.horizontal)
+    }
+    
+    @ViewBuilder // <-- pay attention to this declaration. It explains to compile that this function is also a ViewBuilder
+    private func cardView(for card: MemoryGameModel<String>.Card) -> some View {
+        if card.isMatched && !card.isFaceUp {
+            Rectangle().opacity(0.0)
+        } else {
+            CardView(card: card)
+                .padding(4.0)
+                .aspectRatio(2/3, contentMode: .fit)
+                .onTapGesture {
+                    viewModel.choose(card)
+                }
+        }
     }
 }
 
