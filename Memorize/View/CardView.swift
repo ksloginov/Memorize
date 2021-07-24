@@ -15,14 +15,22 @@ struct CardView: View {
         GeometryReader { geometry in
             ZStack {
                 Text(card.content)
-                    .font(Font.system(size: min(geometry.size.width, geometry.size.height) * DrawingConstants.fontScale))
+                    .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
+                    .animation(Animation.easeOut(duration: 2).repeatForever(autoreverses: false))
+                    .font(.system(size: DrawingConstants.fontSize))
+                    .scaleEffect(scale(thatFits: geometry.size))
             }
             .cardify(isFaceUp: card.isFaceUp)
         }
     }
     
+    private func scale(thatFits size: CGSize) -> CGFloat {
+        return min(size.width, size.height) / (DrawingConstants.fontSize / DrawingConstants.fontScale)
+    }
+    
     private struct DrawingConstants {
         static let fontScale: CGFloat = 0.7
+        static let fontSize: CGFloat = 32.0
     }
 }
 
