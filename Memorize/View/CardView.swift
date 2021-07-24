@@ -23,8 +23,6 @@ struct CardView: View {
                         .stroke(lineWidth: DrawingConstants.lineWidth)
                     Text(card.content)
                         .font(Font.system(size: min(geometry.size.width, geometry.size.height) * DrawingConstants.fontScale))
-                } else if card.isMatched {
-                    shape.opacity(0.0)
                 } else {
                     shape
                         .fill()
