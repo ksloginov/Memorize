@@ -32,6 +32,7 @@ struct Cardify: AnimatableModifier {
             
             content.opacity(rotation < 90 ? 1.0 : 0.0)
         }
+        .rotation3DEffect(Angle.degrees(rotation), axis: (x: 0.0, y: 1.0, z: 0.0))
     }
     
     private struct DrawingConstants {
