@@ -11,7 +11,7 @@ func makeCardContent(index: Int) -> String {
     return "🦄"
 }
 
-class EmojiMemoryGameViewModel {
+class EmojiMemoryGameViewModel: ObservableObject {
     
     static let emojies = ["❤️", "👨🏻‍🍳", "💩", "😡", "😧", "🤖", "🎩", "🐯", "🦺", "💍", "🎒", "🐎", "🐩", "🦧", "🐳", "🐕", "🦄", "🦀", "🐿", "🦔", "🦦", "🦢", "🦜"]
     
@@ -21,7 +21,7 @@ class EmojiMemoryGameViewModel {
         }
     }
     
-    private var model: MemoryGameModel<String> = createMemoryGame()
+    @Published private var model: MemoryGameModel<String> = createMemoryGame()
     
     var cards: Array<MemoryGameModel<String>.Card> {
         return model.cards
