@@ -20,6 +20,9 @@ struct ContentView: View {
                     ForEach(viewModel.cards) { emoji in
                         CardView(card: emoji)
                             .aspectRatio(2/3, contentMode: .fit)
+                            .onTapGesture {
+                                viewModel.choose(emoji)
+                            }
                     }
                 }
             }
@@ -49,9 +52,6 @@ struct CardView: View {
                     .fill()
             }
         }
-//        .onTapGesture {
-//            card.isFaceUp = !card.isFaceUp
-//        }
     }
 }
 

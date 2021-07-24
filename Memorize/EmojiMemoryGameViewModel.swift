@@ -26,4 +26,10 @@ class EmojiMemoryGameViewModel {
     var cards: Array<MemoryGameModel<String>.Card> {
         return model.cards
     }
+    
+    // MARK: - Intent(s)
+    
+    func choose(_ card: MemoryGameModel<String>.Card) {
+        model.choose(card: card)
+    }
 }
