@@ -14,12 +14,14 @@ struct AspectVGrid<Item, ItemView>: View where ItemView: View, Item: Identifiabl
     var content: (Item) -> ItemView
     
     var body: some View {
-        let width: CGFloat = 100.0
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: width), spacing: 0)], content: {
-            ForEach(items) { item in
-                content(item).aspectRatio(aspectRatio, contentMode: .fit)
-            }
-        })
+        GeometryReader { geometry in
+            let width: CGFloat = widthThatFits(itemCount: items.count, in: geometry.size, itemAspecctRatio: aspectRatio)
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: width), spacing: 0)], content: {
+                ForEach(items) { item in
+                    content(item).aspectRatio(aspectRatio, contentMode: .fit)
+                }
+            })
+        }
     }
     
     private func widthThatFits(itemCount: Int, in size: CGSize, itemAspecctRatio: CGFloat) -> CGFloat {
