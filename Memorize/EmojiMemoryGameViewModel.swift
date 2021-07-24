@@ -12,7 +12,12 @@ func makeCardContent(index: Int) -> String {
 }
 
 class EmojiMemoryGameViewModel {
-    private var model: MemoryGameModel<String> = MemoryGameModel<String>(numberOfPairsOfCards: 4, createCardContent: makeCardContent)
+    
+    var emojies = ["❤️", "👨🏻‍🍳", "💩", "😡", "😧", "🤖", "🎩", "🐯", "🦺", "💍", "🎒", "🐎", "🐩", "🦧", "🐳", "🐕", "🦄", "🦀", "🐿", "🦔", "🦦", "🦢", "🦜"]
+    
+    private var model: MemoryGameModel<String> = MemoryGameModel<String>(numberOfPairsOfCards: 4) { pairIndex in
+        return "🦄"
+    }
     
     var cards: Array<MemoryGameModel<String>.Card> {
         return model.cards
