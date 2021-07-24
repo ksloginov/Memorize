@@ -14,7 +14,10 @@ struct MemorizeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            EmojiMemoryGameView(viewModel: emojiGameViewModel)
+            NavigationView {
+                EmojiMemoryGameView(viewModel: emojiGameViewModel)
+                    .navigationTitle(Text(Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? ""))
+            }
         }
     }
 }

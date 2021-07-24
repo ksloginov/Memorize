@@ -16,6 +16,7 @@ struct EmojiMemoryGameView: View {
             AspectVGrid(items: viewModel.cards, aspectRatio: 2/3, content: { card in
                 cardView(for: card)
             })
+            .padding(.top, 12)
             .foregroundColor(.red)
         }
         .padding(.horizontal)
