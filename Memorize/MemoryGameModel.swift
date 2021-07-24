@@ -11,7 +11,14 @@ struct MemoryGameModel<CardContent> {
     private (set) var cards: Array<Card>
     
     func choose(card: Card) {
-        print("Hello!")
+        let chosenIndex = index(of: card)
+        var chosenCard = cards[chosenIndex]
+        chosenCard.isFaceUp.toggle()
+        print("chosenCard = \(chosenCard)")
+    }
+    
+    func index(of card: Card) -> Int {
+        return 0 // TODO: Fix it later? It doesn't have to return 0!
     }
     
     init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent) {
