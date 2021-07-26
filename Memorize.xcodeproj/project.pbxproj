@@ -11,6 +11,8 @@
 		D074BC6626AEF8C200541E10 /* FootballGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074BC6526AEF8C200541E10 /* FootballGameViewModel.swift */; };
 		D074BC6A26AEF9E500541E10 /* FootballMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074BC6926AEF9E500541E10 /* FootballMemoryGameView.swift */; };
 		D074BC6D26AEFE1100541E10 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D074BC6C26AEFE1100541E10 /* SDWebImageSwiftUI */; };
+		D074BC7026AF07FD00541E10 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074BC6F26AF07FD00541E10 /* Team.swift */; };
+		D074BC7226AF082F00541E10 /* TeamList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074BC7126AF082F00541E10 /* TeamList.swift */; };
 		D08CF21A26AC0BBB008F25A5 /* MemoryGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08CF21926AC0BBB008F25A5 /* MemoryGameModel.swift */; };
 		D08CF21C26AC0CA0008F25A5 /* EmojiMemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08CF21B26AC0CA0008F25A5 /* EmojiMemoryGameViewModel.swift */; };
 		D08CF21E26AC1EC9008F25A5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08CF21D26AC1EC9008F25A5 /* CardView.swift */; };
@@ -26,6 +28,8 @@
 		D074BC6326AEF64700541E10 /* GamesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListView.swift; sourceTree = "<group>"; };
 		D074BC6526AEF8C200541E10 /* FootballGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballGameViewModel.swift; sourceTree = "<group>"; };
 		D074BC6926AEF9E500541E10 /* FootballMemoryGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballMemoryGameView.swift; sourceTree = "<group>"; };
+		D074BC6F26AF07FD00541E10 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		D074BC7126AF082F00541E10 /* TeamList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamList.swift; sourceTree = "<group>"; };
 		D08CF21926AC0BBB008F25A5 /* MemoryGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameModel.swift; sourceTree = "<group>"; };
 		D08CF21B26AC0CA0008F25A5 /* EmojiMemoryGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameViewModel.swift; sourceTree = "<group>"; };
 		D08CF21D26AC1EC9008F25A5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -51,6 +55,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D074BC6E26AF07EC00541E10 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D08CF21926AC0BBB008F25A5 /* MemoryGameModel.swift */,
+				D074BC6F26AF07FD00541E10 /* Team.swift */,
+				D074BC7126AF082F00541E10 /* TeamList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D08CF21F26AC1ED0008F25A5 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,12 +105,12 @@
 		D0DC017826AB3499006D281B /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
+				D074BC6E26AF07EC00541E10 /* Model */,
 				D08CF21F26AC1ED0008F25A5 /* View */,
 				D0DC017926AB3499006D281B /* MemorizeApp.swift */,
 				D0DC017D26AB349A006D281B /* Assets.xcassets */,
 				D0DC018226AB349A006D281B /* Info.plist */,
 				D0DC017F26AB349A006D281B /* Preview Content */,
-				D08CF21926AC0BBB008F25A5 /* MemoryGameModel.swift */,
 				D074BC6526AEF8C200541E10 /* FootballGameViewModel.swift */,
 				D08CF21B26AC0CA0008F25A5 /* EmojiMemoryGameViewModel.swift */,
 			);
@@ -194,6 +208,8 @@
 				D0DC017A26AB3499006D281B /* MemorizeApp.swift in Sources */,
 				D074BC6A26AEF9E500541E10 /* FootballMemoryGameView.swift in Sources */,
 				D08CF21A26AC0BBB008F25A5 /* MemoryGameModel.swift in Sources */,
+				D074BC7226AF082F00541E10 /* TeamList.swift in Sources */,
+				D074BC7026AF07FD00541E10 /* Team.swift in Sources */,
 				D08CF21E26AC1EC9008F25A5 /* CardView.swift in Sources */,
 				D074BC6626AEF8C200541E10 /* FootballGameViewModel.swift in Sources */,
 			);
