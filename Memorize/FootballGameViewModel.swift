@@ -12,15 +12,26 @@ class FootballGameViewModel: ObservableObject {
     static let footballClubLogoUrlTemplate = "https://images.fotmob.com/image_resources/logo/teamlogo/%d.png"
     static let popularFootballTeams = "https://pub.fotmob.com/prod/pub/onboarding"
     
-    private static let footballClubIds = [10241, 8686, 8685]
-    
-    private static func createMemoryGame() -> MemoryGameModel<Int> {
-        return MemoryGameModel<Int>(numberOfPairsOfCards: 3) { pairIndex in
-            return footballClubIds[pairIndex]
+    private static func createMemoryGame(ids: [Int]) -> MemoryGameModel<Int> {
+        return MemoryGameModel<Int>(numberOfPairsOfCards: min(12, ids.count)) { pairIndex in
+            return ids[pairIndex]
         }
     }
     
-    @Published private var model: MemoryGameModel<Int> = createMemoryGame()
+    @Published private var model: MemoryGameModel<Int> = createMemoryGame(ids: [])
+    
+    init() {
+        guard let url = URL(string: FootballGameViewModel.popularFootballTeams) else { return }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else { return }
+            let teamIds = try? JSONDecoder().decode(TeamList.self, from: data).suggestedTeams.map({$0.id})
+            DispatchQueue.main.async { [weak self] in
+                if let ids = teamIds {
+                    self?.model = FootballGameViewModel.createMemoryGame(ids: ids)
+                }
+            }
+        }.resume()
+    }
     
     var cards: Array<MemoryGameModel<Int>.Card> {
         return model.cards
