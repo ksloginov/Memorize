@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct FootballMemoryGameView: View {
     
@@ -28,7 +29,7 @@ struct FootballMemoryGameView: View {
             Text("Restart")
                 .foregroundColor(.red)
         })
-        .navigationTitle("Emoji game")
+        .navigationTitle("Football game")
     }
     
     @ViewBuilder // <-- pay attention to this declaration. It explains to compile that this function is also a ViewBuilder
@@ -36,7 +37,10 @@ struct FootballMemoryGameView: View {
         if card.isMatched && !card.isFaceUp {
             Color.clear
         } else {
-            CardView(card: card, content: Image("AppIcon"))
+            CardView(card: card,
+                     content: WebImage(url: URL(string: String(format: FootballGameViewModel.footballClubLogoUrlTemplate, card.content)))
+                        .resizable()
+                        .frame(width: 40, height: 40))
                 .modifier(Cardify(isFaceUp: card.isFaceUp))
                 .padding(4.0)
                 .aspectRatio(2/3, contentMode: .fit)

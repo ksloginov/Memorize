@@ -9,6 +9,7 @@ import Foundation
 
 class FootballGameViewModel: ObservableObject {
 
+    static let footballClubLogoUrlTemplate = "https://images.fotmob.com/image_resources/logo/teamlogo/%d.png"
     private static let footballClubIds = [10241, 8686, 8685]
     
     private static func createMemoryGame() -> MemoryGameModel<Int> {

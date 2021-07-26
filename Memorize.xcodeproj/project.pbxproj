@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		D074BC6426AEF64700541E10 /* GamesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074BC6326AEF64700541E10 /* GamesListView.swift */; };
 		D074BC6626AEF8C200541E10 /* FootballGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074BC6526AEF8C200541E10 /* FootballGameViewModel.swift */; };
 		D074BC6A26AEF9E500541E10 /* FootballMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074BC6926AEF9E500541E10 /* FootballMemoryGameView.swift */; };
+		D074BC6D26AEFE1100541E10 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D074BC6C26AEFE1100541E10 /* SDWebImageSwiftUI */; };
 		D08CF21A26AC0BBB008F25A5 /* MemoryGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08CF21926AC0BBB008F25A5 /* MemoryGameModel.swift */; };
 		D08CF21C26AC0CA0008F25A5 /* EmojiMemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08CF21B26AC0CA0008F25A5 /* EmojiMemoryGameViewModel.swift */; };
 		D08CF21E26AC1EC9008F25A5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08CF21D26AC1EC9008F25A5 /* CardView.swift */; };
@@ -43,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D074BC6D26AEFE1100541E10 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +127,9 @@
 			dependencies = (
 			);
 			name = Memorize;
+			packageProductDependencies = (
+				D074BC6C26AEFE1100541E10 /* SDWebImageSwiftUI */,
+			);
 			productName = Memorize;
 			productReference = D0DC017626AB3499006D281B /* Memorize.app */;
 			productType = "com.apple.product-type.application";
@@ -152,6 +157,9 @@
 				Base,
 			);
 			mainGroup = D0DC016D26AB3499006D281B;
+			packageReferences = (
+				D074BC6B26AEFE1100541E10 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = D0DC017726AB3499006D281B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -376,6 +384,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D074BC6B26AEFE1100541E10 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D074BC6C26AEFE1100541E10 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D074BC6B26AEFE1100541E10 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D0DC016E26AB3499006D281B /* Project object */;
 }
