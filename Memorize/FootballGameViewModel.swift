@@ -37,6 +37,10 @@ class FootballGameViewModel: ObservableObject {
         return model.cards
     }
     
+    var hasSolvedPuzzle: Bool {
+        return cards.count > 0 && cards.filter({!$0.isMatched}).count == 0
+    }
+    
     // MARK: - Intent(s)
     
     func choose(_ card: MemoryGameModel<Int>.Card) {

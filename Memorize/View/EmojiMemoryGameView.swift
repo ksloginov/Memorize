@@ -12,22 +12,27 @@ struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojiMemoryGameViewModel
     
     var body: some View {
-        VStack {
-            AspectVGrid(items: viewModel.cards, aspectRatio: 2/3, content: { card in
-                cardView(for: card)
-            })
-            .padding(.top, 12)
-            .foregroundColor(.red)
-        }
-        .padding(.horizontal)
-        .navigationBarItems(trailing: Button(action: {
-            withAnimation {
-                viewModel.restart()
-            }
-        }) {
-            Text("Restart")
+        ZStack {
+            YouWonView()
+                .opacity(viewModel.hasSolvedPuzzle ? 1.0 : 0.0)
+            VStack {
+                AspectVGrid(items: viewModel.cards, aspectRatio: 2/3, content: { card in
+                    cardView(for: card)
+                })
+                .opacity(viewModel.hasSolvedPuzzle ? 0.0 : 1.0)
+                .padding(.top, 12)
                 .foregroundColor(.red)
-        })
+            }
+            .padding(.horizontal)
+            .navigationBarItems(trailing: Button(action: {
+                withAnimation {
+                    viewModel.restart()
+                }
+            }) {
+                Text("Restart")
+                    .foregroundColor(.red)
+            })
+        }
         .navigationTitle("Emoji game")
     }
     
