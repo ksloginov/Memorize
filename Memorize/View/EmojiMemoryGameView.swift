@@ -36,16 +36,29 @@ struct EmojiMemoryGameView: View {
         if card.isMatched && !card.isFaceUp {
             Color.clear
         } else {
-            CardView(card: card, content: Text(card.content))
-                .modifier(Cardify(isFaceUp: card.isFaceUp))
-                .padding(4.0)
-                .aspectRatio(2/3, contentMode: .fit)
-                .onTapGesture {
-                    withAnimation {
-                        viewModel.choose(card)
+            GeometryReader { geometry in
+                CardView(card: card, content: Text(card.content)
+                            .font(.system(size: DrawingConstants.fontSize))
+                            .scaleEffect(scale(thatFits: geometry.size)))
+                    .modifier(Cardify(isFaceUp: card.isFaceUp))
+                    .padding(4.0)
+                    .aspectRatio(2/3, contentMode: .fit)
+                    .onTapGesture {
+                        withAnimation {
+                            viewModel.choose(card)
+                        }
                     }
-                }
+            }
         }
+    }
+    
+    private func scale(thatFits size: CGSize) -> CGFloat {
+        return min(size.width, size.height) / (DrawingConstants.fontSize / DrawingConstants.fontScale)
+    }
+    
+    fileprivate struct DrawingConstants {
+        static let fontScale: CGFloat = 0.7
+        static let fontSize: CGFloat = 32.0
     }
 }
 
