@@ -36,7 +36,7 @@ struct FootballMemoryGameView: View {
         if card.isMatched && !card.isFaceUp {
             Color.clear
         } else {
-            CardView(card: card)
+            CardView(card: card, content: Text(card.content))
                 .modifier(Cardify(isFaceUp: card.isFaceUp))
                 .padding(4.0)
                 .aspectRatio(2/3, contentMode: .fit)
