@@ -28,6 +28,7 @@ struct EmojiMemoryGameView: View {
             Text("Restart")
                 .foregroundColor(.red)
         })
+        .navigationTitle("Emoji game")
     }
     
     @ViewBuilder // <-- pay attention to this declaration. It explains to compile that this function is also a ViewBuilder

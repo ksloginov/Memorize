@@ -10,12 +10,10 @@ import SwiftUI
 @main
 struct MemorizeApp: App {
     
-    private let emojiGameViewModel = EmojiMemoryGameViewModel()
-    
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                EmojiMemoryGameView(viewModel: emojiGameViewModel)
+                GamesListview()
                     .navigationTitle(Text(Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? ""))
             }
             .navigationViewStyle(StackNavigationViewStyle())
