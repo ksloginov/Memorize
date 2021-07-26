@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct CardView<Content: View>: View {
+struct CardView<Value: Equatable, Content: View>: View {
     
-    var card: MemoryGameModel<String>.Card
+    var card: MemoryGameModel<Value>.Card
     
     var content: Content
     

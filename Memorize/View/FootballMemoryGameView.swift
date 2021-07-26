@@ -32,11 +32,11 @@ struct FootballMemoryGameView: View {
     }
     
     @ViewBuilder // <-- pay attention to this declaration. It explains to compile that this function is also a ViewBuilder
-    private func cardView(for card: MemoryGameModel<String>.Card) -> some View {
+    private func cardView(for card: MemoryGameModel<Int>.Card) -> some View {
         if card.isMatched && !card.isFaceUp {
             Color.clear
         } else {
-            CardView(card: card, content: Text(card.content))
+            CardView(card: card, content: Image("AppIcon"))
                 .modifier(Cardify(isFaceUp: card.isFaceUp))
                 .padding(4.0)
                 .aspectRatio(2/3, contentMode: .fit)
