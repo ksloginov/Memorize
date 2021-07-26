@@ -14,11 +14,9 @@ struct CardView<Value: Equatable, Content: View>: View {
     var content: Content
     
     var body: some View {
-        ZStack {
-            content
-                .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
-                .animation(Animation.easeOut(duration: 2).repeatForever(autoreverses: false))
-        }
+        content
+            .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
+            .animation(card.isMatched ? Animation.easeOut(duration: 2).repeatForever(autoreverses: false) : nil)
         .cardify(isFaceUp: card.isFaceUp)
     }
 }
