@@ -9,8 +9,8 @@ import SwiftUI
 
 struct GamesListview: View {
     
-    private let emojiGameViewModel = EmojiMemoryGameViewModel()
-    private let footballGameViewModel = FootballGameViewModel()
+    @StateObject private var emojiGameViewModel = EmojiMemoryGameViewModel()
+    @StateObject private var footballGameViewModel = FootballGameViewModel()
     
     var body: some View {
         List {
