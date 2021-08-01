@@ -10,10 +10,18 @@ import SwiftUI
 @main
 struct MemorizeApp: App {
     
+    @State var count = 0
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                GamesListview()
+                VStack {
+                    
+                    Button("refresh:\(count)"){
+                        count += 1
+                    }
+                    GamesListview()
+                }
                     .navigationTitle(Text(Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? ""))
             }
             .navigationViewStyle(StackNavigationViewStyle())
