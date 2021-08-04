@@ -15,13 +15,7 @@ struct MemorizeApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                VStack {
-                    
-                    Button("refresh:\(count)"){
-                        count += 1
-                    }
-                    GamesListview()
-                }
+                GamesListview()
                     .navigationTitle(Text(Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? ""))
             }
             .navigationViewStyle(StackNavigationViewStyle())
