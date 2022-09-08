@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import Mixpanel
 
 struct FootballMemoryGameView: View {
     
@@ -35,6 +36,9 @@ struct FootballMemoryGameView: View {
             })
         }
         .navigationTitle("Football game")
+        .onAppear {
+            Mixpanel.mainInstance().track(event: "Football game opened")
+        }
     }
     
     @ViewBuilder // <-- pay attention to this declaration. It explains to compile that this function is also a ViewBuilder

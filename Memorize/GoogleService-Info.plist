@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>952825703158-82lkv68itd4ns4bahqg2f2r47bpvpd9a.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.952825703158-82lkv68itd4ns4bahqg2f2r47bpvpd9a</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA3tzj5P3dLBn-H8rmna_7q49w9FTqtcWc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>952825703158</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>klogi.Memorize</string>
+	<key>PROJECT_ID</key>
+	<string>memorize-a4c60</string>
+	<key>STORAGE_BUCKET</key>
+	<string>memorize-a4c60.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:952825703158:ios:f88c0b97e23a344fef1ad7</string>
+</dict>
+</plist>

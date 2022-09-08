@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D05948952727E6AC00829789 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05948942727E6AC00829789 /* GoogleService-Info.plist */; };
+		D059489C2727FE0E00829789 /* Mixpanel in Frameworks */ = {isa = PBXBuildFile; productRef = D059489B2727FE0E00829789 /* Mixpanel */; };
 		D074BC6426AEF64700541E10 /* GamesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074BC6326AEF64700541E10 /* GamesListView.swift */; };
 		D074BC6626AEF8C200541E10 /* FootballGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074BC6526AEF8C200541E10 /* FootballGameViewModel.swift */; };
 		D074BC6A26AEF9E500541E10 /* FootballMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074BC6926AEF9E500541E10 /* FootballMemoryGameView.swift */; };
@@ -26,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D05948942727E6AC00829789 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D074BC6326AEF64700541E10 /* GamesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListView.swift; sourceTree = "<group>"; };
 		D074BC6526AEF8C200541E10 /* FootballGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballGameViewModel.swift; sourceTree = "<group>"; };
 		D074BC6926AEF9E500541E10 /* FootballMemoryGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballMemoryGameView.swift; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D059489C2727FE0E00829789 /* Mixpanel in Frameworks */,
 				D074BC6D26AEFE1100541E10 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +116,7 @@
 				D08CF21F26AC1ED0008F25A5 /* View */,
 				D0DC017926AB3499006D281B /* MemorizeApp.swift */,
 				D0DC017D26AB349A006D281B /* Assets.xcassets */,
+				D05948942727E6AC00829789 /* GoogleService-Info.plist */,
 				D0DC018226AB349A006D281B /* Info.plist */,
 				D0DC017F26AB349A006D281B /* Preview Content */,
 				D074BC6526AEF8C200541E10 /* FootballGameViewModel.swift */,
@@ -138,6 +143,7 @@
 				D0DC017226AB3499006D281B /* Sources */,
 				D0DC017326AB3499006D281B /* Frameworks */,
 				D0DC017426AB3499006D281B /* Resources */,
+				D05948992727E81F00829789 /* Crashlytics setup */,
 			);
 			buildRules = (
 			);
@@ -146,6 +152,7 @@
 			name = Memorize;
 			packageProductDependencies = (
 				D074BC6C26AEFE1100541E10 /* SDWebImageSwiftUI */,
+				D059489B2727FE0E00829789 /* Mixpanel */,
 			);
 			productName = Memorize;
 			productReference = D0DC017626AB3499006D281B /* Memorize.app */;
@@ -176,6 +183,7 @@
 			mainGroup = D0DC016D26AB3499006D281B;
 			packageReferences = (
 				D074BC6B26AEFE1100541E10 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				D059489A2727FE0E00829789 /* XCRemoteSwiftPackageReference "mixpanel-swift" */,
 			);
 			productRefGroup = D0DC017726AB3499006D281B /* Products */;
 			projectDirPath = "";
@@ -192,11 +200,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0DC018126AB349A006D281B /* Preview Assets.xcassets in Resources */,
+				D05948952727E6AC00829789 /* GoogleService-Info.plist in Resources */,
 				D0DC017E26AB349A006D281B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D05948992727E81F00829789 /* Crashlytics setup */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Crashlytics setup";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\" -gsp \"${SRCROOT}/Memorize/GoogleService-Info.plist\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0DC017226AB3499006D281B /* Sources */ = {
@@ -344,6 +374,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/Preview Content\"";
 				DEVELOPMENT_TEAM = 282GM4A2S4;
 				ENABLE_PREVIEWS = YES;
@@ -406,6 +437,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D059489A2727FE0E00829789 /* XCRemoteSwiftPackageReference "mixpanel-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mixpanel/mixpanel-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		D074BC6B26AEFE1100541E10 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
@@ -417,6 +456,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D059489B2727FE0E00829789 /* Mixpanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D059489A2727FE0E00829789 /* XCRemoteSwiftPackageReference "mixpanel-swift" */;
+			productName = Mixpanel;
+		};
 		D074BC6C26AEFE1100541E10 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D074BC6B26AEFE1100541E10 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;

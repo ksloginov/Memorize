@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseCrashlytics
 
 class EmojiMemoryGameViewModel: ObservableObject {
     
@@ -30,10 +31,17 @@ class EmojiMemoryGameViewModel: ObservableObject {
     // MARK: - Intent(s)
     
     func choose(_ card: MemoryGameModel<String>.Card) {
-        model.choose(card: card)
+        //model.choose(card: card)
+        let a: String? = nil
+        a!
     }
     
     func restart() {
-        model.restart()
+        //model.restart()
+        Crashlytics.crashlytics().record(error: CustomErrors.failedToRestart)
     }
+}
+
+enum CustomErrors: Error {
+    case failedToRestart
 }

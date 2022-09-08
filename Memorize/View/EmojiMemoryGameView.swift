@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Mixpanel
 
 struct EmojiMemoryGameView: View {
     
@@ -34,6 +35,9 @@ struct EmojiMemoryGameView: View {
             })
         }
         .navigationTitle("Emoji game")
+        .onAppear {
+            Mixpanel.mainInstance().track(event: "Emoji game opened", properties: ["game":"emoji"])
+        }
     }
     
     @ViewBuilder // <-- pay attention to this declaration. It explains to compile that this function is also a ViewBuilder
